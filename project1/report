@@ -1,0 +1,23 @@
+1.
+
+a. 
+
+We would expect 100 individuals in the case group, since the probability of disease is P(d) = .10.
+Then, N*p = 1000 * .10 = 100.
+
+We run a binomial distribution with a .1 probability of each trial being a success. We run the test 1000 times (one per individual) with one trial each person (one chromosome per person).
+We use the random binomial function and then sort the tests into 0s and 1s (allele vs no allele). 
+
+In our trial, there were 108 individuals with the disease.
+
+b.
+
+We need to create 1000 individuals with 200 SNPs each. Each SNP has a .5 chance of being present (equal chance of being present or not present), except the first SNP. 
+The first SNP should have a .95 chance of being present in 100 individuals, and a .25 chance of being present in the other 900 individuals.
+
+To create a sample population of 1000 individuals, each with 200 SNPs, we first create an array of 1000 rows and 200 columns, and fill each index with either 0 or 1 randomly (.5 chance of each). 
+Then, we create two new arrays of lengths 100 and 900, where the 100 length array has each index being 1 with a .95 chance, and the 900 length array with a .25 chance. 
+Then, we replace the first column of every row with this array, which represents the causal SNP.
+
+c.
+
